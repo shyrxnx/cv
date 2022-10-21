@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form/Input Tag Practice</title>
+</head>
+<body>
+    <form> <!--You can add form elements that I listed below using this tag -->
+        <label><b> Your Name: </b></label> <!--This is a label-->
+        <input type="text" value=""> <!--This is a textbox, one line only-->
+        <br>
+        <br>
+        <label><b> Your Email: </b></label>
+        <input type="text" value=""> <!--This is a textbox, one line only-->
+        <br>
+        <br>
+        <label><b> Your Message: </b></label>
+        <br>
+        <br>
+        <textarea name="Message" rows="15" cols="45"></textarea> <!--This is a textarea, you can specify row & col-->
+        <br>
+        <br>
+        <label><b> Choose your favorite drink: </b></label> 
+        <select id="drinks" name="Drinks">  <!--This is the select element, allows you  to select using a dropdown-->
+            <option value="Water"> Water </option>
+            <option value="Coca-cola"> Coca-cola </option> 
+            <option value="Beer"> Beer </option>
+            <option value="Royal"> Royal </option>
+            <option value="Sprite"> Sprite </option>
+        </select>
+        <br>
+        <br>
+        <button type="button" onclick="alert('Hello, you!')"> Click me! </button>  <!--This is a button, wel, it's a button, you can add attributes for when its clicked-->
+        <br>
+        <br>
+        <label for="ice_cream_choice"> <b> Choose a flavor: </b></label>
+        <input list="ice_cream_flavors" id="ice_cream_choice" name="ice_cream_choice">  <!--This is a datalist, almost like the select, but not quite because it doesn't show one of the options at first glance-->
+        <datalist id="ice_cream_flavors">
+            <option value="Cookies & Cream"> </option> <!--The <option> HTML element is used to define an item contained in a <select>, an <optgroup>, or a <datalist> element. As such, <option> can represent menu items in popups and other lists of items in an HTML document.-->
+            <option value="Vanilla"> </option>
+            <option value="Chocolate"> </option>
+            <option value="Rocky Road"> </option>
+            <option value="Double Dutch"></option>            
+        </datalist> 
+        <br>
+        <br>
+        <fieldset> <!--The fieldset element is used to group related data (input elements) in a form.-->
+            <legend> Preferences: </legend>  <!--The legend element defines a caption for the fieldset element.-->
+            <label> Choose Your Favorite Sitcom: </label>
+            <input type="radio" id="Friends">
+            <label for="Friends"> Friends </label>
+            <input type="radio" id="TBBT">
+            <label for="TBBT"> The Big Bang Theory </label>
+        </fieldset>
+        <br>
+        <br>
+        <label for="patience"> Patience Level: </label>
+        <meter id="patience"
+               min="0" max="100"
+               value="20"
+               low="33" high="66" optimum="80">
+        </meter>
+        <br>
+        <br>
+        <label for="kpop"> Choose a K-pop Group: </label>
+        <select id="kpop"> <!--The optgroup HTML element creates a grouping of options within a select element.-->
+            <optgroup label="Boy Groups">
+                <option> BTS </option> <!--The <option> HTML element is used to define an item contained in a <select>, an <optgroup>, or a <datalist> element. As such, <option> can represent menu items in popups and other lists of items in an HTML document.-->
+                <option> SEVENTEEN </option>
+                <option> EXO </option>
+                <option> Stray Kids </option>
+                <option> ATEEZ </option>
+                <option> TREASURE </option>
+                <option> ENHYPEN </option>
+            </optgroup>
+            <optgroup label="Girl Groups">
+                <option> NewJeans </option>
+                <option> Le Sserafim </option>
+                <option> NMIXX </option>
+                <option> IVE </option>
+                <option> STAYC </option>
+                <option> fromis_9 </option>
+                <option> Aespa </option>
+            </optgroup>
+        </select>
+        <br>
+        <br>
+        <label for="webdev"> Web Development Progress: </label> <!--The <progress> HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.-->
+        <progress id="webdev" max="100" value="5"> 5% </progress>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)"> <!--The <output> HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.-->
+        <input type="range" id="b" name="b" value="50" /> +
+        <input type="number" id="a" name="a" value="10" /> =
+        <output name="result" for="a b"> 60 </output>
+    </form>
+    <form>
+        <input type="button" value="Add to favorites"> <!--A push button with no default behavior displaying the value of the value attribute, empty by default.-->
+        <br>
+        <br>
+        <label> Do you want to subscribe on my email list? </label>
+        <input type="checkbox" id="email"> <!--A check box allowing single values to be selected/deselected.-->
+        <label for="email"> Yes </label>
+        <br>
+        <br>
+        <label> Choose Your Favorite Color: </label> 
+        <input type="color"> <!--A control for specifying a color; opening a color picker when active in supporting browsers.-->
+        <br>
+        <br>
+        <label> Your Birthday: </label>
+        <input type="date"> <!--A control for entering a date (year, month, and day, with no time). Opens a date picker or numeric wheels for year, month, day when active in supporting browsers. -->
+        <br>
+        <br>
+        <label> Choose a time for your appointment: </label>
+        <input type="datetime-local"> <!-- A control for entering a date and time, with no time zone. Opens a date picker or numeric wheels for date- and time-components when active in supporting browsers. -->
+        <br>
+        <br>
+        <label for="g_email"> Enter your Google Email: </label>
+        <input type="email" id="g_email" pattern=".+gmail\.com"> <!-- A field for editing an email address. Looks like a text input, but has validation parameters and relevant keyboard in supporting browsers and devices with dynamic keyboards. -->
+        <br>
+        <br>
+        <label> Choose a profile picture: </label>
+        <input type="file"> <!-- A control that lets the user select a file. Use the accept attribute to define the types of files that the control can select. -->
+        <br>
+        <br>
+        <label> Pick a Month: </label>
+        <input type="month"> <!--A control for entering a month and year, with no time zone.-->
+        <br>
+        <br>
+        <label> Pick a number: </label>
+        <input type="number"> <!-- A control for entering a number. Displays a spinner and adds default validation. Displays a numeric keypad in some devices with dynamic keypads. -->
+        <br>
+        <br>
+        <label> Password: </label>
+        <input type="password"> <!-- A single-line text field whose value is obscured. Will alert user if site is not secure. -->
+        <br>
+        <br>
+        <p> Yes or No <p>
+        <input type="radio" name="boolean" value="yes" id="y"> <!--A radio button, allowing a single value to be selected out of multiple choices with the same name value.-->
+        <label for="y" > Yes </label>
+        <input type="radio" name="boolean" value="no" id="n">
+        <label for="n"> No </label>
+        <br>
+        <br>
+        <label> Audio Settings: </label>
+        <input type="range" id="volume"> <!-- A control for entering a number whose exact value is not important. Displays as a range widget defaulting to the middle value. Used in conjunction min and max to define the range of acceptable values. -->
+        <label for="volume"> Volume </label>
+        <br>
+        <br>
+        <label for="site-search"> Search this site: </label>
+        <input type="search" id="site-search" name="site">
+        <button> Search </button>
+        <br>
+        <br>
+        <label> Enter your phone number </label>
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <!-- A control for entering a telephone number. Displays a telephone keypad in some devices with dynamic keypads. -->
+        <br>
+        <br>
+        <label> Choose a time: </label>
+        <input type="time"> <!--A control for entering a time value with no time zone.-->
+        <br>
+        <br>
+        <label for="url"> Enter a URL: </label> <!--<input> elements of type url are used to let the user enter and edit a URL.-->
+        <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+        <br>
+        <br>
+        <label for="camp_week"> Choose a week in October to December: </label> <!--A control for entering a date consisting of a week-year number and a week number with no time zone.-->
+        <input type="week" id="camp_week" min="2022-W42" max="2022-W52" required>
+        <br>
+        <br>
+        <input type="submit" value="Submit"> <!--A button that submits the form.-->
+        <br>
+        <br>
+        <input type="reset" value="Reset"> <!--Reset all values to 0 in form-->
+        <br>
+        <br>
+    </form>
+</body>
+</html>
